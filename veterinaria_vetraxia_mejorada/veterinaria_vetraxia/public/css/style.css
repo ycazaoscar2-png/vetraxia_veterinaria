@@ -1,0 +1,75 @@
+*{box-sizing:border-box}
+body{font-family:system-ui,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1f2933}
+header{background:#0f766e;color:#fff;position:sticky;top:0;z-index:50}
+.barra{padding:12px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+header h1{margin:0;font-size:1.3rem}
+main{max-width:900px;margin:20px auto;padding:0 14px}
+.card{background:#fff;border-radius:10px;padding:18px;margin-bottom:18px;box-shadow:0 1px 4px #0001}
+input,select,button{padding:9px 10px;margin:4px 4px 4px 0;border:1px solid #cbd2d9;border-radius:6px;font-size:1rem}
+button{background:#0f766e;color:#fff;border:0;cursor:pointer}
+button.peligro{background:#b91c1c}
+button.suave{background:#e4e7eb;color:#1f2933}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:8px;border-bottom:1px solid #e4e7eb}
+.msg{margin:6px 0;font-weight:600}
+.ok{color:#047857}.error{color:#b91c1c}
+.tabla{overflow-x:auto}
+
+/* ---------- Menú ---------- */
+nav{display:flex;flex-wrap:wrap;gap:2px}
+nav a{color:#fff;text-decoration:none;padding:6px 12px;border-radius:999px;font-weight:600;transition:background .15s}
+nav a:hover,nav a:focus-visible{background:#ffffff33;outline:none}
+a.enlace{display:inline-block;margin-left:6px;color:#0f766e;font-size:.95rem}
+.pestanas{margin-bottom:8px}
+button.activa{background:#0f766e;color:#fff}
+.card{scroll-margin-top:130px}
+
+/* ---------- Ticket ---------- */
+.ticket{border:2px dashed #0f766e;text-align:center}
+.ticket .codigo{font-family:ui-monospace,Consolas,monospace;font-size:1.8rem;font-weight:800;letter-spacing:2px;color:#0f766e;background:#e6f4f1;border-radius:8px;padding:10px;margin:8px 0;word-break:break-all}
+.chico{font-size:.9rem;color:#52606d}
+@media print{
+  body>*{display:none!important}
+  body>main{display:block!important;margin:0}
+  main>.card{display:none!important}
+  main>.ticket{display:block!important;box-shadow:none}
+}
+
+/* ---------- Mascota del menú ---------- */
+.pista{position:relative;height:50px;background:#0b5f58;border-top:1px solid #ffffff1f;cursor:pointer}
+.pista::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:repeating-linear-gradient(90deg,#ffffff26 0 14px,transparent 14px 28px)}
+.perro{position:absolute;bottom:3px;left:0;width:60px;height:46px;cursor:pointer;z-index:3;transition-property:left;transition-timing-function:linear;-webkit-tap-highlight-color:transparent}
+.perro svg{width:100%;height:100%;overflow:visible;transition:transform .15s}
+.perro.izq svg{transform:scaleX(-1)}
+.perro .cola{transform-origin:12px 22px;animation:menea 1.1s ease-in-out infinite alternate}
+.perro.feliz .cola{animation-duration:.18s}
+.perro .pata{transform-box:fill-box;transform-origin:50% 0}
+.perro.camina .pata.a{animation:paso .22s ease-in-out infinite alternate}
+.perro.camina .pata.b{animation:paso .22s ease-in-out infinite alternate-reverse}
+.perro.camina svg .cuerpo-g{animation:bote .22s ease-in-out infinite alternate}
+.perro.salta{animation:salto .55s ease-out}
+.perro .lengua,.perro .ojo-c,.perro .zz{display:none}
+.perro.feliz .lengua{display:block}
+.perro.dormido .ojo{display:none}.perro.dormido .ojo-c{display:block}.perro.dormido .cola{animation:none}
+.perro.dormido .zz{display:block;animation:zz 2s ease-in-out infinite}
+@keyframes menea{from{transform:rotate(-22deg)}to{transform:rotate(22deg)}}
+@keyframes paso{from{transform:rotate(-28deg)}to{transform:rotate(28deg)}}
+@keyframes bote{from{transform:translateY(0)}to{transform:translateY(-2px)}}
+@keyframes salto{0%{transform:translateY(0)}40%{transform:translateY(-22px)}100%{transform:translateY(0)}}
+@keyframes zz{0%{opacity:0;transform:translateY(4px)}50%{opacity:1}100%{opacity:0;transform:translateY(-6px)}}
+.pelota{position:absolute;bottom:6px;width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff7,#f97316 40%,#c2410c);z-index:2;transition:left .5s cubic-bezier(.3,.7,.4,1)}
+.pelota.vuela{animation:vuela .5s ease-out}
+@keyframes vuela{0%{transform:translateY(0)}45%{transform:translateY(-34px)}100%{transform:translateY(0)}}
+.burbuja{position:absolute;top:100%;margin-top:6px;background:#fff;color:#1f2933;border-radius:12px;padding:9px 12px;box-shadow:0 4px 14px #0003;font-size:.95rem;max-width:min(260px,90vw);z-index:60;display:none}
+.burbuja.ver{display:block;animation:sube .2s}
+.burbuja::before{content:"";position:absolute;top:-6px;left:var(--flecha,20px);width:12px;height:12px;background:#fff;transform:rotate(45deg)}
+.burbuja button{display:block;width:100%;text-align:left;margin:4px 0 0;background:#e6f4f1;color:#0f4c46}
+.burbuja button:hover{background:#cdebe5}
+@keyframes sube{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.corazon{position:absolute;pointer-events:none;font-size:18px;z-index:4;animation:flota 1s ease-out forwards}
+@keyframes flota{to{transform:translateY(-34px);opacity:0}}
+.velo{position:fixed;inset:0;background:#0008;z-index:100;display:flex;align-items:center;justify-content:center;padding:14px}
+.velo .card{width:100%;max-width:420px;margin:0}
+.velo textarea{width:100%;padding:9px 10px;border:1px solid #cbd2d9;border-radius:6px;font:inherit;min-height:90px;margin:4px 0}
+.velo input{width:100%;margin-right:0}
+@media (prefers-reduced-motion:reduce){.perro .cola,.perro.camina .pata,.perro.camina svg .cuerpo-g{animation:none!important}}

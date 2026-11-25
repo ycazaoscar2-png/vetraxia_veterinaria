@@ -1,0 +1,31 @@
+VETRAXIA (Quedamos) - COMO USARLO (3 pasos)
+
+1. Instala Node.js (version LTS) desde https://nodejs.org y reinicia la PC. Solo la primera vez.
+
+2. Haz doble clic en INICIAR.bat
+   - La primera vez instala todo solo.
+   - Te pedira UNA cosa: la contrasena de Neon.
+     En Neon: boton verde Connect > pestana "Postgres database" > Show password, y copia la contrasena.
+     En la ventana negra: clic derecho para pegar, y Enter.
+
+3. Se abre el navegador en http://localhost:3000
+   Administrador: admin@quedamos.com  /  Admin12345
+
+Para volver a usarlo otro dia: solo doble clic en INICIAR.bat.
+Para cerrarlo: cierra la ventana negra.
+
+------------------------------------------------------------
+NOVEDADES
+------------------------------------------------------------
+- Recuperar acceso: en la pantalla de entrada, "Olvidaste tu usuario o tu clave?".
+  * Clave: se envia un codigo de 6 digitos al correo (vence en 15 min).
+  * Usuario: se confirma con tu nombre completo + el nombre de una mascota y se muestra tu correo parcialmente.
+- Ticket: cada cita nueva genera un codigo unico (ej. VTX-261124-K7M2QH). Sale en pantalla, en "Mis citas",
+  en el correo del cliente y en el panel del administrador (con buscador por ticket).
+- Mascota del menu: pasea por el menu, salta, juega a la pelota, se duerme. Al tocarla puedes
+  escribir a la veterinaria y el mensaje llega al correo del dueno.
+
+CORREOS: en el archivo .env agrega (ver .env.example):
+   CORREO_DUENO, SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS
+Sin esos datos todo funciona igual, pero los correos y codigos solo aparecen en la ventana negra.
+Si ya tenias el .env creado, agrega esas lineas y reinicia INICIAR.bat (instala nodemailer solo).

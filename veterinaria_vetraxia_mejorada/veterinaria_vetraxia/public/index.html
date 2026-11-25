@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VETRAXIA</title><link rel="stylesheet" href="/css/style.css"></head>
+<body>
+<header><div class="barra"><h1>🐾 VETRAXIA · Citas veterinarias</h1>
+  <nav><a href="#sec-entrar">Entrar</a><a href="#registro">Crear cuenta</a><a href="#recuperar">Recuperar acceso</a></nav></div></header>
+<main>
+  <div class="card" id="sec-entrar"><h2>Iniciar sesión</h2>
+    <input id="l_email" type="email" placeholder="Correo">
+    <input id="l_clave" type="password" placeholder="Clave">
+    <button onclick="entrar()">Entrar</button>
+    <a href="#recuperar" class="enlace" onclick="abrirRecuperar()">¿Olvidaste tu usuario o tu clave?</a>
+    <div id="l_msg" class="msg"></div>
+  </div>
+  <div class="card" id="registro"><h2>Crear cuenta</h2>
+    <input id="r_nombre" placeholder="Nombre completo">
+    <input id="r_email" type="email" placeholder="Correo">
+    <input id="r_clave" type="password" placeholder="Clave (mín. 6)">
+    <button onclick="registrar()">Registrarme</button>
+    <div id="r_msg" class="msg"></div>
+  </div>
+  <div class="card" id="recuperar" style="display:none"><h2>Recuperar acceso</h2>
+    <div class="pestanas"><button class="suave activa" id="t_clave" onclick="pestana('clave')">Olvidé mi clave</button>
+    <button class="suave" id="t_usuario" onclick="pestana('usuario')">Olvidé mi usuario</button></div>
+
+    <div id="p_clave">
+      <div id="c_paso1">
+        <p>Escribe tu correo y te enviamos un código de 6 dígitos.</p>
+        <input id="c_email" type="email" placeholder="Tu correo">
+        <button onclick="pedirCodigo()">Enviar código</button>
+      </div>
+      <div id="c_paso2" style="display:none">
+        <p>Revisa tu correo e ingresa el código (vence en 15 minutos).</p>
+        <input id="c_codigo" inputmode="numeric" maxlength="6" placeholder="Código de 6 dígitos">
+        <input id="c_nueva" type="password" placeholder="Nueva clave (mín. 6)">
+        <button onclick="cambiarClave()">Cambiar clave</button>
+      </div>
+      <div id="c_msg" class="msg"></div>
+    </div>
+
+    <div id="p_usuario" style="display:none">
+      <p>Tu usuario es el correo con el que te registraste. Confírmanos quién eres:</p>
+      <input id="u_nombre" placeholder="Tu nombre completo">
+      <input id="u_mascota" placeholder="Nombre de una de tus mascotas">
+      <button onclick="buscarUsuario()">Buscar mi usuario</button>
+      <div id="u_msg" class="msg"></div>
+    </div>
+  </div>
+</main>
+<script src="/js/api.js"></script><script src="/js/login.js"></script><script src="/js/mascota.js"></script>
+</body></html>
