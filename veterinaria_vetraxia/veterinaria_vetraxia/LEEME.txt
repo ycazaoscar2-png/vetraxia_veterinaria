@@ -1,0 +1,15 @@
+VETRAXIA (Quedamos) - COMO USARLO (3 pasos)
+
+1. Instala Node.js (version LTS) desde https://nodejs.org y reinicia la PC. Solo la primera vez.
+
+2. Haz doble clic en INICIAR.bat
+   - La primera vez instala todo solo.
+   - Te pedira UNA cosa: la contrasena de Neon.
+     En Neon: boton verde Connect > pestana "Postgres database" > Show password, y copia la contrasena.
+     En la ventana negra: clic derecho para pegar, y Enter.
+
+3. Se abre el navegador en http://localhost:3000
+   Administrador: admin@quedamos.com  /  Admin12345
+
+Para volver a usarlo otro dia: solo doble clic en INICIAR.bat.
+Para cerrarlo: cierra la ventana negra.

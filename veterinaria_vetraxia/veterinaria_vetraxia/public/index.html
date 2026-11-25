@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VETRAXIA</title><link rel="stylesheet" href="/css/style.css"></head>
+<body>
+<header><h1>VETRAXIA · Citas veterinarias</h1></header>
+<main>
+  <div class="card"><h2>Iniciar sesión</h2>
+    <input id="l_email" type="email" placeholder="Correo">
+    <input id="l_clave" type="password" placeholder="Clave">
+    <button onclick="entrar()">Entrar</button>
+    <div id="l_msg" class="msg"></div>
+  </div>
+  <div class="card"><h2>Crear cuenta</h2>
+    <input id="r_nombre" placeholder="Nombre completo">
+    <input id="r_email" type="email" placeholder="Correo">
+    <input id="r_clave" type="password" placeholder="Clave (mín. 6)">
+    <button onclick="registrar()">Registrarme</button>
+    <div id="r_msg" class="msg"></div>
+  </div>
+</main>
+<script src="/js/api.js"></script><script src="/js/login.js"></script>
+</body></html>

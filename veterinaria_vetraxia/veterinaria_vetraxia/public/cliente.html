@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VETRAXIA · Cliente</title><link rel="stylesheet" href="/css/style.css"></head>
+<body>
+<header><h1>🐾 VETRAXIA</h1><div><span id="quien"></span> <button class="suave" onclick="salir()">Salir</button></div></header>
+<main>
+  <div class="card"><h2>Mis mascotas</h2>
+    <input id="m_nombre" placeholder="Nombre">
+    <select id="m_especie"><option>Perro</option><option>Gato</option><option>Ave</option><option>Otro</option></select>
+    <input id="m_raza" placeholder="Raza"><input id="m_edad" placeholder="Edad">
+    <button onclick="agregarMascota()">Registrar</button>
+    <div id="m_msg" class="msg"></div>
+    <div class="tabla"><table><tbody id="listaMascotas"></tbody></table></div>
+    <div id="historial"></div>
+  </div>
+  <div class="card"><h2>Reservar una cita</h2>
+    <select id="mascota"></select><select id="servicio"></select>
+    <input id="fecha" type="date"><select id="hora"></select>
+    <input id="motivo" placeholder="Motivo de la consulta">
+    <button id="btnReservar" onclick="reservar()">Reservar</button> <button id="btnCancelarEdicion" class="suave" style="display:none" onclick="cancelarEdicion()">Cancelar cambio</button>
+    <div id="msg" class="msg"></div>
+  </div>
+  <div class="card"><h2>Mis citas</h2>
+    <div class="tabla"><table><thead><tr><th>Fecha</th><th>Hora</th><th>Mascota</th><th>Servicio</th><th>Estado</th><th></th></tr></thead>
+    <tbody id="citas"></tbody></table></div>
+  </div>
+</main>
+<script src="/js/api.js"></script><script src="/js/cliente.js"></script>
+</body></html>

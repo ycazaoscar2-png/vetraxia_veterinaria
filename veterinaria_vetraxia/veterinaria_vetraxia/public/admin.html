@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VETRAXIA · Administración</title><link rel="stylesheet" href="/css/style.css"></head>
+<body>
+<header><h1>🐾 VETRAXIA · Administración</h1><button class="suave" onclick="salir()">Salir</button></header>
+<main>
+  <div class="card"><h2>Reportes</h2>
+    Desde <input id="desde" type="date"> Hasta <input id="hasta" type="date">
+    <button onclick="cargarReporte()">Actualizar</button> <button class="suave" onclick="descargarCSV()">Descargar CSV</button>
+    <div id="reporte"></div>
+  </div>
+  <div class="card"><h2>Horario de atención</h2>
+    <div class="tabla"><table><thead><tr><th>Día</th><th>Abre</th><th>Cierra</th><th>Atiende</th><th></th></tr></thead><tbody id="horarios"></tbody></table></div>
+    <div id="h_msg" class="msg"></div>
+  </div>
+  <div class="card"><h2>Servicios</h2>
+    <input id="s_nombre" placeholder="Nombre"><input id="s_dur" type="number" placeholder="Minutos" value="30">
+    <input id="s_precio" type="number" step="0.01" placeholder="Precio">
+    <button onclick="crearServicio()">Agregar</button><div id="s_msg" class="msg"></div>
+    <div class="tabla"><table><tbody id="servicios"></tbody></table></div>
+  </div>
+  <div class="card"><h2>Citas</h2>
+    <input id="filtro" type="date"> <button class="suave" onclick="hoy()">Hoy</button> <button class="suave" onclick="filtro.value='';cargarCitas()">Ver todas</button>
+    <div class="tabla"><table><thead><tr><th>Fecha</th><th>Hora</th><th>Dueño</th><th>Mascota</th><th>Servicio</th><th>Motivo</th><th>Estado</th><th></th></tr></thead>
+    <tbody id="citas"></tbody></table></div>
+  </div>
+</main>
+<script src="/js/api.js"></script><script src="/js/admin.js"></script>
+</body></html>
